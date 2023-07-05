@@ -18,4 +18,5 @@ class Store(var products: MutableList<Produkt> = mutableListOf()) {
     fun getProductsBySubcategory(subcategory: String): List<Produkt> {
         return products.filter { it.subcategory == subcategory }
     }
+
 }

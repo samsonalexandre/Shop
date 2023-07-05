@@ -1,3 +1,3 @@
-open class Produkt(val name: String, var preis: Double, var review: String, val category: String, val subcategory: String) {
+open class Produkt(val name: String, var preis: Double, var bewertung: String, val category: String, val subcategory: String) {
 
 }
