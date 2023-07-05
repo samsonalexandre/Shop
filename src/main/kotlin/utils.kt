@@ -2,7 +2,7 @@ import kotlin.math.round
 import kotlin.random.Random
 
 fun createRandomProducts(store: Store, numProducts: Int = 10) {
-    val categories = listOf("Kleidung", "Elektronikartikel", "Filme", "Bücher")
+    val categories = listOf("Kleidung", "Elektronik", "Filme", "Bücher")
     val subcategories = mapOf(
         "Kleidung" to listOf("T-Shirts", "Jacken", "Schuhe"),
         "Elektronik" to listOf("Fernseher", "Drucker", "Konsole"),
