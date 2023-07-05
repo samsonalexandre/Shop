@@ -1,2 +1,5 @@
-class Produkt(val artikeel: String, var preis: Double) {
+import kotlin.random.Random
+
+open class Produkt(val name: String, var preis: Double, var review: String, val category: String, val subcategory: String) {
+
 }
