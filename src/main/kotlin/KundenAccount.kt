@@ -1,4 +1,4 @@
-open class UserAccount(username: String, password: String): Account(username, password) {
+class UserAccount(username: String, password: String): Account(username, password) {
 
     val shoppingCart = Warenkorb()
 
