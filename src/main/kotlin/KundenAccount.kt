@@ -1,16 +1,44 @@
-class KundenAccount(val userName: String, var pin: String, var kontostand: Double) {
-    var warenkorb: MutableList<Produkt> = mutableListOf()
+open class UserAccount(username: String, password: String): Account(username, password) {
 
-    fun addToWarenkorb(produkt: Produkt) {
-        warenkorb.add(produkt)
+    val shoppingCart = Warenkorb()
+
+    fun addToCart(product: Product) {
+        shoppingCart.addToCart(product)
     }
-    fun removeFromWarenkorb(produkt: Produkt) {
-        warenkorb.remove(produkt)
+
+    fun removeFromCart(product: Product) {
+        shoppingCart.removeFromCart(product)
     }
-    fun getWarenkorbKosten(): Double {
-        return warenkorb.sumOf { it.preis }
+
+    fun getTotalPriceInCart(): Double {
+        return shoppingCart.getTotalPrice()
     }
-    fun bewerteProdukt(produkt: Produkt, bewertung: String) {
-        produkt.bewertung = bewertung
+
+    fun pay() {
+        val totalPrice = getTotalPriceInCart()
+        val paymentMethod = choosePaymentMethod()
+        if (paymentMethod != null) {
+            val isPaymentSuccessful = paymentMethod.makePayment(totalPrice)
+            if (isPaymentSuccessful) {
+                println("Sie haben bezahlt $totalPrice")
+            } else {
+                println("Es ist ein Fehler passiert, bitte versuchen Sie noch ein mal")
+            }
+        } else {
+            println("Bezahlung abgebrochen")
+        }
+
+    }
+    private fun choosePaymentMethod(): PaymentMethod? {
+        println("Womit möchten Sie bezahlen")
+        println("[1] Kreditkarte")
+        println("[2] PayPal")
+        val paymentMethodChois = readLine()?.toIntOrNull()
+
+        return when(paymentMethodChois) {
+            1 -> CreditCardPayment()
+            2 -> PayPalPayment()
+            else -> null
+        }
     }
 }

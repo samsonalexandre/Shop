@@ -1,10 +1,14 @@
 fun main() {
-    var store = Store()
-    createRandomProducts(store, 45)
+    val accountManagement = AccountManagement()
+    var currentUser: Account? = null
 
-    var alleProdukte = store.getAllProducts()
-    alleProdukte.forEach {produkt -> println("${produkt.name}, Preis: ${produkt.preis}. ${produkt.bewertung}, Kategorie: ${produkt.category}, Unterkategory: ${produkt.subcategory}")}
-
-    var produktKat = store.getProductsByCategory("Kleidung")
-    produktKat.forEach {produkt ->  println("${produkt.name}")}
+    while(true) {
+        println("Willkommen in unseren Shop!")
+        println("Bitte wählen Sie eine Option")
+        println(""" 
+            [1] - Registrieren
+            [2] - Einloggen
+            [3] - Beenden
+        """.trimIndent()) // Habe beim Viktor abgeguckt
+    }
 }

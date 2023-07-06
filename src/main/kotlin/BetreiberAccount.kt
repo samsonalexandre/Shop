@@ -1,8 +1,15 @@
-class BetreiberAccount(val userName: String, val pin: String) {
-    fun addProdukt(store: Store, produkt: Produkt) {
-        store.addProduct(produkt)
+open class OwnerAccount(username: String, password: String): Account(username, password) {
+    private val products = mutableListOf<Product>()
+
+    fun addProduct(product: Product) {
+        products.add(product)
     }
-    fun removeProdukt(store: Store, produkt: Produkt) {
-        store.removeProduct(produkt)
+
+    fun removeProduct(product: Product) {
+        products.remove(product)
+    }
+
+    fun changeProductPrice(product: Product, newPrice: Double) {
+        product.price = newPrice
     }
 }
