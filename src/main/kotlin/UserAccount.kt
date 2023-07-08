@@ -1,6 +1,6 @@
 class UserAccount(username: String, password: String): Account(username, password) {
-
-    val shoppingCart = Warenkorb()
+    private val shoppingCart = Warenkorb()
+    private var adminAccount: AdminAccount? = null //Chat GPT
 
     fun addToCart(product: Product) {
         shoppingCart.addToCart(product)
@@ -8,6 +8,9 @@ class UserAccount(username: String, password: String): Account(username, passwor
 
     fun removeFromCart(product: Product) {
         shoppingCart.removeFromCart(product)
+    }
+    fun getCartProductList(): List<Product> {
+        return shoppingCart.getCartProductList()
     }
 
     fun getTotalPriceInCart(): Double {
@@ -33,12 +36,19 @@ class UserAccount(username: String, password: String): Account(username, passwor
         println("Womit möchten Sie bezahlen")
         println("[1] Kreditkarte")
         println("[2] PayPal")
-        val paymentMethodChois = readLine()?.toIntOrNull()
+
+        val paymentMethodChois = readlnOrNull()?.toIntOrNull()
 
         return when(paymentMethodChois) {
-            1 -> CreditCardPayment()
-            2 -> PayPalPayment()
+            1 -> PaymentMethod.CREDIT_CARD
+            2 -> PaymentMethod.PAYPAL
             else -> null
         }
+    }
+    fun setOwnerAccount(ownerAccount: AdminAccount) { // Chat GPT.
+        this.adminAccount = ownerAccount
+    }
+    fun viewAllProducts(): List<Product> {
+        return adminAccount?.getProductList() ?: emptyList()
     }
 }

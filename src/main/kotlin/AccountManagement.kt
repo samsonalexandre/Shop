@@ -1,15 +1,15 @@
-class AccountManagement {
+open class AccountManagement {
     private val userAccounts = mutableListOf<UserAccount>()
-    private val ownerAccounts = mutableListOf<OwnerAccount>()
+    private val adminAccounts = mutableListOf<AdminAccount>()
 
     fun registerUser(username: String, password: String) {
         val newUserAccount = UserAccount(username, password)
         userAccounts.add(newUserAccount)
     }
 
-    fun registerOwner(username: String, password: String) {
-        val newOwnerAccount = OwnerAccount(username, password)
-        ownerAccounts.add(newOwnerAccount)
+    fun registerAdmin(username: String, password: String) {
+        val newOwnerAccount = AdminAccount(username, password)
+        adminAccounts.add(newOwnerAccount)
     }
 
     fun login(username: String, password: String): Account? {
@@ -19,12 +19,11 @@ class AccountManagement {
             }
         }
 
-        for (ownerAccount in ownerAccounts) {
-            if (ownerAccount.username == username && ownerAccount.password == password) {
-                return ownerAccount
+        for (adminAccount in adminAccounts) {
+            if (adminAccount.username == username && adminAccount.password == password) {
+                return adminAccount
             }
         }
-
         return null
     }
 }

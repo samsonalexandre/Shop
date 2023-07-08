@@ -16,4 +16,7 @@ class Warenkorb {
         }
         return totalPrice
     }
+    fun getCartProductList(): List<Product>{
+        return products
+    }
 }
