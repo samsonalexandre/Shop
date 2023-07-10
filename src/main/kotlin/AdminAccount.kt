@@ -33,15 +33,18 @@ open class AdminAccount(username: String, password: String): Account(username, p
             val category = categories.random()
             val subCategory = subCategories[category]?.random() ?:""
             val name = when (category) {
-                "Filme" -> "${filmArtikelName.random()}"
-                "Bücher" -> "${bücherArtikelName.random()}"
+                "Filme" -> filmArtikelName.random()
+                "Bücher" -> bücherArtikelName.random()
                 else -> ""
             }
             val price = Random.nextDouble(10.0, 100.0)
-            val roundPrice = String.format("%.2f", price)
+            val priceString = String.format("%.2f", price)
+            val formattedPrice = priceString.replace(",", ".")
+            val roundPrice = formattedPrice.toDouble()
             val bewertung = "Bewertung: ${Random.nextInt(1, 6)}"
             val product = Product(name, roundPrice.toDouble(), bewertung, category, subCategory)
             addProduct(product)
+
         }
     }
 }

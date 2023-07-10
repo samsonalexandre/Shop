@@ -1,6 +1,6 @@
 import java.util.*
 
-enum class PaymentMethod {
+enum class PaymentMethod { //Gordon Lucas 10.07.2023
     CREDIT_CARD {
         override fun makePayment(amount: Double): Boolean {
             val random = Random()

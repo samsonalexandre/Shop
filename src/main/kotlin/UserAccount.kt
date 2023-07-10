@@ -3,7 +3,14 @@ class UserAccount(username: String, password: String): Account(username, passwor
     private var adminAccount: AdminAccount? = null //Chat GPT
 
     fun addToCart(product: Product) {
+        if (product.quantity.isBlank()) {
+            throw InvalidProductException("Produkt kann nicht zum Warenkorb hinzugefügt werden")
+        }
         shoppingCart.addToCart(product)
+    }
+
+    fun setAdminAccount(adminAccount: AdminAccount?) {
+        this.adminAccount = adminAccount
     }
 
     fun removeFromCart(product: Product) {
@@ -19,18 +26,20 @@ class UserAccount(username: String, password: String): Account(username, passwor
 
     fun pay() {
         val totalPrice = getTotalPriceInCart()
+        if (totalPrice <= 0.0) {
+            throw InvalidProductException("Warenkorb ist leer. Sie können nicht Bezahlen")
+        }
         val paymentMethod = choosePaymentMethod()
         if (paymentMethod != null) {
-            val isPaymentSuccessful = paymentMethod.makePayment(totalPrice)
-            if (isPaymentSuccessful) {
-                println("Sie haben bezahlt $totalPrice")
+            val isPaymenSuccessful = paymentMethod.makePayment(totalPrice)
+            if (isPaymenSuccessful) {
+                println("Sie haben Bezahlt $totalPrice")
             } else {
-                println("Es ist ein Fehler passiert, bitte versuchen Sie noch ein mal")
+                throw InvalidProductException("Bezahlung fehlgeschlagen")
             }
         } else {
-            println("Bezahlung abgebrochen")
+            throw InvalidProductException("Bezahlung abgebrochen")
         }
-
     }
     private fun choosePaymentMethod(): PaymentMethod? {
         println("Womit möchten Sie bezahlen")
@@ -44,9 +53,6 @@ class UserAccount(username: String, password: String): Account(username, passwor
             2 -> PaymentMethod.PAYPAL
             else -> null
         }
-    }
-    fun setOwnerAccount(ownerAccount: AdminAccount) { // Chat GPT.
-        this.adminAccount = ownerAccount
     }
     fun viewAllProducts(): List<Product> {
         return adminAccount?.getProductList() ?: emptyList()
