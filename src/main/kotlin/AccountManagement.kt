@@ -10,7 +10,7 @@ class AccountManagement() {
         if (userAccounts.any { it.username == username }) {
             throw InvalidInputException("Benutzername existiert bereits")
         }
-        if (isAdmin && adminAccounts.any {it.username == username}) {
+        if (isAdmin && adminAccounts.any { it.username == username }) {
             throw InvalidInputException("Admin Benutzername existiert bereits")
         }
         val account = if (isAdmin) AdminAccount(username, password) else UserAccount(username, password)

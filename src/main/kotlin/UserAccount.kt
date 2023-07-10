@@ -1,4 +1,4 @@
-class UserAccount(username: String, password: String): Account(username, password) {
+class UserAccount(username: String, password: String) : Account(username, password) {
     private val shoppingCart = Warenkorb()
     private var adminAccount: AdminAccount? = null //Chat GPT
 
@@ -16,6 +16,7 @@ class UserAccount(username: String, password: String): Account(username, passwor
     fun removeFromCart(product: Product) {
         shoppingCart.removeFromCart(product)
     }
+
     fun getCartProductList(): List<Product> {
         return shoppingCart.getCartProductList()
     }
@@ -41,6 +42,7 @@ class UserAccount(username: String, password: String): Account(username, passwor
             throw InvalidProductException("Bezahlung abgebrochen")
         }
     }
+
     private fun choosePaymentMethod(): PaymentMethod? {
         println("Womit möchten Sie bezahlen")
         println("[1] Kreditkarte")
@@ -48,12 +50,13 @@ class UserAccount(username: String, password: String): Account(username, passwor
 
         val paymentMethodChois = readlnOrNull()?.toIntOrNull()
 
-        return when(paymentMethodChois) {
+        return when (paymentMethodChois) {
             1 -> PaymentMethod.CREDIT_CARD
             2 -> PaymentMethod.PAYPAL
             else -> null
         }
     }
+
     fun viewAllProducts(): List<Product> {
         return adminAccount?.getProductList() ?: emptyList()
     }

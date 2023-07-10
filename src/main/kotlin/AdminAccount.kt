@@ -1,6 +1,6 @@
 import kotlin.random.Random
 
-open class AdminAccount(username: String, password: String): Account(username, password) {
+open class AdminAccount(username: String, password: String) : Account(username, password) {
     private val products = mutableListOf<Product>()
 
     fun addProduct(product: Product) {
@@ -14,12 +14,15 @@ open class AdminAccount(username: String, password: String): Account(username, p
     fun changeProductPrice(product: Product, newPrice: Double) {
         product.price = newPrice
     }
+
     fun getProductList(): List<Product> {
         return products.toList()
     }
+
     fun getProductByName(name: String): Product? {
         return products.find { it.name == name }
     }
+
     fun createRandomProducts(numProducts: Int) {
         val categories = listOf("Filme", "Bücher")
         val subCategories = mapOf(
@@ -31,7 +34,7 @@ open class AdminAccount(username: String, password: String): Account(username, p
 
         repeat(numProducts) {
             val category = categories.random()
-            val subCategory = subCategories[category]?.random() ?:""
+            val subCategory = subCategories[category]?.random() ?: ""
             val name = when (category) {
                 "Filme" -> filmArtikelName.random()
                 "Bücher" -> bücherArtikelName.random()

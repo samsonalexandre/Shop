@@ -2,18 +2,20 @@ fun userMenu(userAccount: UserAccount) {
     while (true) {
         println("Benutzer Menü")
         println("Bitte wählen Sie eine Option:")
-        println("""
+        println(
+            """
             [1] - Produkte anzeigen
             [2] - Produkt zum Warenkorb hinzufügen
             [3] - Produkt aus dem Warenkorb entfernen
             [4] - Gesamtpreis im Warenkorb anzeigen
             [5] - Bezahlung
             [6] - Ausloggen
-        """.trimIndent())
+        """.trimIndent()
+        )
 
         val userWahl = readlnOrNull()?.toIntOrNull()
         if (userWahl != null) {
-            when(userWahl) {
+            when (userWahl) {
                 1 -> {
                     println("Produkte anzeigen")
                     userAccount.viewAllProducts() // Das war schwer....
@@ -58,6 +60,7 @@ fun userMenu(userAccount: UserAccount) {
                     println("Auf Wiedersehen")
                     break
                 }
+
                 else -> {
                     println("Falsche eingabe")
                 }

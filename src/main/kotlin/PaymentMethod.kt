@@ -12,7 +12,7 @@ enum class PaymentMethod { //Gordon Lucas 10.07.2023
             }
             return isPaymentSuccessful
         }
-                },
+    },
     PAYPAL {
         override fun makePayment(amount: Double): Boolean {
             val random = Random()
@@ -25,5 +25,6 @@ enum class PaymentMethod { //Gordon Lucas 10.07.2023
             return isPaymentSuccessful
         }
     };
+
     abstract fun makePayment(amount: Double): Boolean
 }
