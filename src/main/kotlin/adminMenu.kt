@@ -1,5 +1,5 @@
 fun adminMenu(adminAccount: AdminAccount) {
-    adminAccount.createRandomProducts(25)
+    //adminAccount.createRandomProducts(25)
 
     while (true) {
         println("Eigentümer Menü")
@@ -14,14 +14,12 @@ fun adminMenu(adminAccount: AdminAccount) {
         """.trimIndent()
         )
 
-        val adminWahl = readLine()?.toIntOrNull()
-
-        when (adminWahl) {
+        when (readlnOrNull()?.toIntOrNull()) {
             1 -> {
                 println("Produkte anzeigen")
                 val productList = adminAccount.getProductList()
                 for (product in productList) {
-                    println(product)
+                    println("${product.name}. Preis: ${product.price}. Menge: ${product.quantity}. Kategorie: ${product.category}. Unterkategorie: ${product.subcategory}")
                 }
             }
 
@@ -60,7 +58,7 @@ fun adminMenu(adminAccount: AdminAccount) {
             4 -> {
                 println("Zufällige Produkte erstellen")
                 println("Bitte geben Sie die Anzahl der zu erstellenden Produkte ein:")
-                val numProducts = readLine()?.toIntOrNull()
+                val numProducts = readlnOrNull()?.toIntOrNull()
                 if (numProducts != null && numProducts > 0) {
                     adminAccount.createRandomProducts(numProducts)
                     println("$numProducts zufällige Produkte wurden erstellt.")
