@@ -3,16 +3,21 @@ import kotlin.random.Random
 open class AdminAccount(username: String, password: String) : Account(username, password) {
     private val products = mutableListOf<Product>()
 
+    fun getCreatedProducts(): List<Product> {
+        return products.toList()
+    }
+    fun switchToUserAccount(): UserAccount {
+        val userAccount = UserAccount(username, password)
+        userAccount.addProducts(getCreatedProducts())
+        return userAccount
+    }
+
     fun addProduct(product: Product) {
         products.add(product)
     }
 
     fun removeProduct(product: Product) {
         products.remove(product)
-    }
-
-    fun changeProductPrice(product: Product, newPrice: Double) {
-        product.price = newPrice
     }
 
     fun getProductList(): List<Product> {
@@ -50,4 +55,5 @@ open class AdminAccount(username: String, password: String) : Account(username, 
 
         }
     }
+
 }

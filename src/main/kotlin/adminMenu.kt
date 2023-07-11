@@ -10,7 +10,8 @@ fun adminMenu(adminAccount: AdminAccount) {
             [2] - Produkt hinzufügen
             [3] - Produkt entfernen
             [4] - Zufällige Produkte erstellen
-            [5] - Ausloggen
+            [5] - Zu Benutzerkonto wechseln
+            [6] - Ausloggen
         """.trimIndent()
         )
 
@@ -68,6 +69,13 @@ fun adminMenu(adminAccount: AdminAccount) {
             }
 
             5 -> {
+                println("Zu Benutzerkonto wechseln")
+                val userAccount = adminAccount.switchToUserAccount()
+                userMenu(userAccount)
+                return
+            }
+
+            6 -> {
                 println("Auf Wiedersehen")
                 break
             }

@@ -11,17 +11,16 @@ fun main() {
             [3] - Beenden
         """.trimIndent()
         ) // Habe beim Viktor abgeguckt
-        val userWahl = readLine()?.toIntOrNull()
 
-        when (userWahl) {
+        when (readLine()?.toIntOrNull()) {
             1 -> {
                 println("Registrierung")
                 println("Bitte Benutzername eingeben")
-                val username = readLine()
+                val username = readlnOrNull()
                 println("Bitte Passwort eingeben")
-                val password = readLine()
+                val password = readlnOrNull()
                 println("Möchten Sie einen Admin-Account erstellen? (Ja/Nein):")
-                val isAdminInput = readLine()
+                val isAdminInput = readlnOrNull()
                 val isAdmin = isAdminInput == "Ja"
                 try {
                     accountManagement.registerAcoount(username, password, isAdmin)
@@ -35,9 +34,9 @@ fun main() {
             2 -> {
                 println("Einlogen")
                 println("Bitte Benutzername eingeben")
-                val username = readLine()
+                val username = readlnOrNull()
                 println("Bitte Passwort eingeben")
-                val password = readLine()
+                val password = readlnOrNull()
 
                 try {
                     val account = accountManagement.login(username, password)

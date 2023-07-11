@@ -9,8 +9,8 @@ class UserAccount(username: String, password: String) : Account(username, passwo
         shoppingCart.addToCart(product)
     }
 
-    fun setAdminAccount(adminAccount: AdminAccount?) {
-        this.adminAccount = adminAccount
+    fun addProducts(products: List<Product>) {
+        shoppingCart.addProducts(products)
     }
 
     fun removeFromCart(product: Product) {
@@ -60,4 +60,5 @@ class UserAccount(username: String, password: String) : Account(username, passwo
     fun viewAllProducts(): List<Product> {
         return adminAccount?.getProductList() ?: emptyList()
     }
+
 }
