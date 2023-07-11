@@ -1,6 +1,10 @@
 class UserAccount(username: String, password: String) : Account(username, password) {
     private val shoppingCart = Warenkorb()
-    private var adminAccount: AdminAccount? = null //Chat GPT
+    //private var adminProducts: List<Product>? = null
+    //private var adminAccount: AdminAccount? = null //Chat GPT
+    fun addAdminProducts(products: List<Product>) {
+        shoppingCart.addProducts(products)
+    }
 
     fun addToCart(product: Product) {
         if (product.quantity.isBlank()) {
@@ -56,9 +60,4 @@ class UserAccount(username: String, password: String) : Account(username, passwo
             else -> null
         }
     }
-
-    fun viewAllProducts(): List<Product> {
-        return adminAccount?.getProductList() ?: emptyList()
-    }
-
 }

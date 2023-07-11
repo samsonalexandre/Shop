@@ -1,5 +1,4 @@
-fun adminMenu(adminAccount: AdminAccount) {
-    //adminAccount.createRandomProducts(25)
+fun adminMenu(adminAccount: AdminAccount, accountManagement: AccountManagement) {
 
     while (true) {
         println("Eigentümer Menü")
@@ -18,7 +17,7 @@ fun adminMenu(adminAccount: AdminAccount) {
         when (readlnOrNull()?.toIntOrNull()) {
             1 -> {
                 println("Produkte anzeigen")
-                val productList = adminAccount.getProductList()
+                val productList = accountManagement.getProductList()
                 for (product in productList) {
                     println("${product.name}. Preis: ${product.price}. Menge: ${product.quantity}. Kategorie: ${product.category}. Unterkategorie: ${product.subcategory}")
                 }
@@ -32,7 +31,7 @@ fun adminMenu(adminAccount: AdminAccount) {
                 val price = readLine()?.toDoubleOrNull()
                 if (name != null && price != null) {
                     val newProduct = Product(name, price, "", "", "")
-                    adminAccount.addProduct(newProduct)
+                    accountManagement.addProduct(newProduct)
                     println("Sie haben $newProduct hinzugefügt")
                 } else {
                     println("Falsche eingabe")
@@ -44,12 +43,12 @@ fun adminMenu(adminAccount: AdminAccount) {
                 println("Welches Produkt möchten Sie entfernen? Bitte Name eingeben")
                 val name = readlnOrNull()
                 if (name != null) {
-                    val produktToRemove = adminAccount.getProductByName(name)
+                    val produktToRemove = accountManagement.getProductList().find { it.name == name }
                     if (produktToRemove != null) {
-                        val removedProduct = adminAccount.removeProduct(produktToRemove)
-                        println("$removedProduct")
+                        accountManagement.removeProduct(produktToRemove)//adminAccount.removeProduct(produktToRemove)
+                        println("$produktToRemove wurde entfernt")
                     } else {
-                        println("Falsche eingabe")
+                        println("Produkt nicht gefunden")
                     }
                 } else {
                     println("Falsche eingabe")
@@ -61,7 +60,7 @@ fun adminMenu(adminAccount: AdminAccount) {
                 println("Bitte geben Sie die Anzahl der zu erstellenden Produkte ein:")
                 val numProducts = readlnOrNull()?.toIntOrNull()
                 if (numProducts != null && numProducts > 0) {
-                    adminAccount.createRandomProducts(numProducts)
+                    adminAccount.createRandomProducts(accountManagement ,numProducts)
                     println("$numProducts zufällige Produkte wurden erstellt.")
                 } else {
                     println("Falsche eingaben")
@@ -70,8 +69,8 @@ fun adminMenu(adminAccount: AdminAccount) {
 
             5 -> {
                 println("Zu Benutzerkonto wechseln")
-                val userAccount = adminAccount.switchToUserAccount()
-                userMenu(userAccount)
+                val userAccount = adminAccount.switchToUserAccount(accountManagement)
+                userMenu(userAccount, accountManagement)
                 return
             }
 

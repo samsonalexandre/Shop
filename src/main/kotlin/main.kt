@@ -23,7 +23,7 @@ fun main() {
                 val isAdminInput = readlnOrNull()
                 val isAdmin = isAdminInput == "Ja"
                 try {
-                    accountManagement.registerAcoount(username, password, isAdmin)
+                    accountManagement.registerAccount(username, password, isAdmin)
                     println("Registrierung erfolgreich")
                 } catch (ex: InvalidInputException) {
                     println("Fehler: ${ex.message}")
@@ -41,9 +41,9 @@ fun main() {
                 try {
                     val account = accountManagement.login(username, password)
                     if (account is UserAccount) {
-                        userMenu(account)
+                        userMenu(account, accountManagement)
                     } else if (account is AdminAccount) {
-                        adminMenu(account)
+                        adminMenu(account, accountManagement)
                     }
                 } catch (ex: InvalidInputException) {
                     println("Fehler: ${ex.message}")

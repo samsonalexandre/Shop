@@ -1,4 +1,4 @@
-fun userMenu(userAccount: UserAccount) {
+fun userMenu(userAccount: UserAccount, accountManagement: AccountManagement) {
     while (true) {
         println("Benutzer Menü")
         println("Bitte wählen Sie eine Option:")
@@ -18,18 +18,22 @@ fun userMenu(userAccount: UserAccount) {
             when (userWahl) {
                 1 -> {
                     println("Produkte anzeigen")
-                    userAccount.viewAllProducts() // Das war schwer....
+                    val productList = accountManagement.getProductList()
+                    for (product in productList) {
+                        println("${product.name}. Preis: ${product.price}. Menge: ${product.quantity}. Kategorie: ${product.category}. Unterkategorie: ${product.subcategory}")
+                    }
                 }
 
                 2 -> {
                     println("Produkt zum Warenkorb hinzufügen")
-                    val allProducts = userAccount.viewAllProducts()
+                    val allProducts = accountManagement.getProductList()
                     println("Bitte wählen Sie ein Produkt")
                     val userProdukt = readlnOrNull()
                     val product = allProducts.find { it.name == userProdukt }
                     if (product != null) {
                         userAccount.addToCart(product)
-                        println("Sie haben $product in ihren Warenkorb zugefügt")
+                        println("Sie haben ${product.name}. Preis: ${product.price}. Menge: ${product.quantity}. " +
+                                "Kategorie: ${product.category}. Unterkategorie: ${product.subcategory}  in ihren Warenkorb zugefügt")
                     } else {
                         println("Falsche eingabe")
                     }
@@ -43,12 +47,13 @@ fun userMenu(userAccount: UserAccount) {
                     val product = cardProdukts.find { it.name == userProdukt }
                     if (product != null) {
                         userAccount.removeFromCart(product)
+                        println("Das Produkt ${product.name} wurde aus Ihrem Warenkorb entfernt")
                     }
                 }
 
                 4 -> {
                     println("Gesamtpreis im Warenkorb anzeigen")
-                    userAccount.getTotalPriceInCart()
+                    println("Gesamtpreis: ${userAccount.getTotalPriceInCart()}")
                 }
 
                 5 -> {
