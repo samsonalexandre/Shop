@@ -35,9 +35,7 @@ class UserAccount(username: String, password: String) : Account(username, passwo
         val paymentMethod = choosePaymentMethod()
         if (paymentMethod != null) {
             val isPaymenSuccessful = paymentMethod.makePayment(totalPrice)
-            if (isPaymenSuccessful) {
-                println("Sie haben Bezahlt $totalPrice")
-            } else {
+            if (!isPaymenSuccessful) {
                 throw InvalidProductException("Bezahlung fehlgeschlagen")
             }
         } else {
