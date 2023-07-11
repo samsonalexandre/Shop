@@ -4,8 +4,10 @@ open class AdminAccount(username: String, password: String) : Account(username, 
 
     fun switchToUserAccount(accountManagement: AccountManagement): UserAccount {
         println("Möchten Sie ein neues Benutzerkonto erstellen oder sich mit einem vorhandenen Konto anmelden?")
-        println("[1] - Neues Benutzerkonto erstellen")
-        println("[2] - Mit vorhandenem Konto anmelden")
+        println("""
+            [1] - Neues Benutzerkonto erstellen
+            [2] - Mit vorhandenem Konto anmelden
+        """.trimIndent())
 
         when (readLine()?.toIntOrNull()) {
             1 -> {
