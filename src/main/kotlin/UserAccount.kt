@@ -27,7 +27,7 @@ class UserAccount(username: String, password: String) : Account(username, passwo
     fun pay() {
         val totalPrice = getTotalPriceInCart()
         if (totalPrice <= 0.0) {
-            throw InvalidProductException("Warenkorb ist leer. Sie könnenZ nicht Bezahlen")
+            throw InvalidProductException("Warenkorb ist leer. Sie können nicht Bezahlen")
         }
         val paymentMethod = choosePaymentMethod()
         if (paymentMethod != null) {
