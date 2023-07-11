@@ -60,7 +60,7 @@ fun adminMenu(adminAccount: AdminAccount, accountManagement: AccountManagement) 
                 println("Bitte geben Sie die Anzahl der zu erstellenden Produkte ein:")
                 val numProducts = readlnOrNull()?.toIntOrNull()
                 if (numProducts != null && numProducts > 0) {
-                    adminAccount.createRandomProducts(accountManagement ,numProducts)
+                    adminAccount.createRandomProducts(accountManagement, numProducts)
                     println("$numProducts zufällige Produkte wurden erstellt.")
                 } else {
                     println("Falsche eingaben")

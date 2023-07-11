@@ -1,7 +1,5 @@
 class UserAccount(username: String, password: String) : Account(username, password) {
     private val shoppingCart = Warenkorb()
-    //private var adminProducts: List<Product>? = null
-    //private var adminAccount: AdminAccount? = null //Chat GPT
     fun addAdminProducts(products: List<Product>) {
         shoppingCart.addProducts(products)
     }

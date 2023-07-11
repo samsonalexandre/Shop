@@ -32,8 +32,10 @@ fun userMenu(userAccount: UserAccount, accountManagement: AccountManagement) {
                     val product = allProducts.find { it.name == userProdukt }
                     if (product != null) {
                         userAccount.addToCart(product)
-                        println("Sie haben ${product.name}. Preis: ${product.price}. Menge: ${product.quantity}. " +
-                                "Kategorie: ${product.category}. Unterkategorie: ${product.subcategory}  in ihren Warenkorb zugefügt")
+                        println(
+                            "Sie haben ${product.name}. Preis: ${product.price}. Menge: ${product.quantity}. " +
+                                    "Kategorie: ${product.category}. Unterkategorie: ${product.subcategory}  in ihren Warenkorb zugefügt"
+                        )
                     } else {
                         println("Falsche eingabe")
                     }

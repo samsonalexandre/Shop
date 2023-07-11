@@ -20,6 +20,7 @@ class Warenkorb {
     fun getCartProductList(): List<Product> {
         return products
     }
+
     fun addProducts(products: List<Product>) {
         this.products.addAll(products)
     }
