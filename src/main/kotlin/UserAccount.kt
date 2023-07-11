@@ -1,8 +1,5 @@
 class UserAccount(username: String, password: String) : Account(username, password) {
     private val shoppingCart = Warenkorb()
-//    fun addAdminProducts(products: List<Product>) {
-//        shoppingCart.addProducts(products)
-//    }
 
     fun addToCart(product: Product) {
         if (product.quantity.isBlank()) {
