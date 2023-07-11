@@ -45,7 +45,7 @@ fun adminMenu(adminAccount: AdminAccount, accountManagement: AccountManagement) 
                 if (name != null) {
                     val produktToRemove = accountManagement.getProductList().find { it.name == name }
                     if (produktToRemove != null) {
-                        accountManagement.removeProduct(produktToRemove)//adminAccount.removeProduct(produktToRemove)
+                        accountManagement.removeProduct(produktToRemove)
                         println("$produktToRemove wurde entfernt")
                     } else {
                         println("Produkt nicht gefunden")

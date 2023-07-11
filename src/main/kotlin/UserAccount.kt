@@ -1,8 +1,8 @@
 class UserAccount(username: String, password: String) : Account(username, password) {
     private val shoppingCart = Warenkorb()
-    fun addAdminProducts(products: List<Product>) {
-        shoppingCart.addProducts(products)
-    }
+//    fun addAdminProducts(products: List<Product>) {
+//        shoppingCart.addProducts(products)
+//    }
 
     fun addToCart(product: Product) {
         if (product.quantity.isBlank()) {
@@ -30,7 +30,7 @@ class UserAccount(username: String, password: String) : Account(username, passwo
     fun pay() {
         val totalPrice = getTotalPriceInCart()
         if (totalPrice <= 0.0) {
-            throw InvalidProductException("Warenkorb ist leer. Sie können nicht Bezahlen")
+            throw InvalidProductException("Warenkorb ist leer. Sie könnenZ nicht Bezahlen")
         }
         val paymentMethod = choosePaymentMethod()
         if (paymentMethod != null) {
