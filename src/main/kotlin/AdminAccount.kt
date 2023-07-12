@@ -5,7 +5,7 @@ open class AdminAccount(username: String, password: String) : Account(username, 
     // Erstellt ein neues UserAccount-Objekt und gibt es zurück
     // Wenn Konto existiert mit dem Konto anmelden
     /*
-    Hier habe ich hilfe bekommen von Sergei Shkredov
+    Hier, habe ich hilfe bekommen vom Sergei Shkredov
     https://habr.com/ru/companies/jugru/articles/274091/
     https://habr.com/ru/companies/jugru/articles/314524/
      */
