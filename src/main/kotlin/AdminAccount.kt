@@ -4,6 +4,11 @@ open class AdminAccount(username: String, password: String) : Account(username, 
 
     // Erstellt ein neues UserAccount-Objekt und gibt es zurück
     // Wenn Konto existiert mit dem Konto anmelden
+    /*
+    Hier habe ich hilfe bekommen von Sergei Shkredov
+    https://habr.com/ru/companies/jugru/articles/274091/
+    https://habr.com/ru/companies/jugru/articles/314524/
+     */
     fun switchToUserAccount(accountManagement: AccountManagement): UserAccount {
         println("Möchten Sie ein neues Benutzerkonto erstellen oder sich mit einem vorhandenen Konto anmelden?")
         println(
@@ -13,7 +18,7 @@ open class AdminAccount(username: String, password: String) : Account(username, 
         """.trimIndent()
         )
 
-        when (readLine()?.toIntOrNull()) {
+        when (readlnOrNull()?.toIntOrNull()) {
             1 -> {
                 println("Neues Benutzerkonto erstellen")
                 println("Bitte Benutzername eingeben")

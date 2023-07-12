@@ -11,7 +11,12 @@ open class AccountManagement() {
         if (username.isNullOrEmpty() || password.isNullOrEmpty()) {
             throw InvalidInputException("Ungültige Benutzerdaten")
         }
-
+        /*
+        Die Bedingung beginnt mit dem Ausdruck userAccounts.any, der darauf hinweist, dass die Funktion any auf der Liste
+        userAccounts angewendet wird. any ist eine Funktion, die über jedes Element der Liste iteriert und überprüft,
+        ob ein bestimmtes Kriterium erfüllt ist. In diesem Fall wird überprüft, ob das Attribut username eines Elements in userAccounts mit der Variable username übereinstimmt.
+        https://developer.alexanderklimov.ru/android/kotlin/class.php#any
+         */
         if (userAccounts.any { it.username == username }) {
             throw InvalidInputException("Benutzername existiert bereits")
         }

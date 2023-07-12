@@ -24,8 +24,8 @@ class Warenkorb {
         return products
     }
 
-    // Fügt eine Liste von Produkten zum Warenkorb hinzu
-    fun addProducts(products: List<Product>) {
-        this.products.addAll(products)
-    }
+//    // Fügt eine Liste von Produkten zum Warenkorb hinzu
+//    fun addProducts(products: List<Product>) {
+//        this.products.addAll(products)
+//    }
 }
