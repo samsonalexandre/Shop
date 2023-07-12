@@ -12,7 +12,7 @@ fun login() {
         """.trimIndent()
         ) // Habe beim Viktor abgeguckt
 
-        when (readLine()?.toIntOrNull()) {
+        when (readlnOrNull()?.toIntOrNull()) {
             1 -> {
                 println("Registrierung")
                 println("Bitte Benutzername eingeben")

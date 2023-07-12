@@ -19,9 +19,14 @@ fun adminMenu(adminAccount: AdminAccount, accountManagement: AccountManagement) 
             1 -> {
                 println("Produkte anzeigen")
                 val productList = accountManagement.getProductList()
-                for (product in productList) {
-                    println("${product.name}. Preis: ${product.price}. Menge: ${product.quantity}. Kategorie: ${product.category}. Unterkategorie: ${product.subcategory}")
+                if (productList.isNotEmpty()) {
+                    for (product in productList) {
+                        println("${product.name}. Preis: ${product.price}. Menge: ${product.quantity}. Kategorie: ${product.category}. Unterkategorie: ${product.subcategory}")
+                    }
+                } else {
+                    println("Es sind keine produkte verfügbar")
                 }
+
             }
             // Fügt ein Produkt zur Produktliste
             2 -> {
@@ -78,6 +83,10 @@ fun adminMenu(adminAccount: AdminAccount, accountManagement: AccountManagement) 
             6 -> {
                 println("Auf Wiedersehen")
                 break
+            }
+
+            else -> {
+                throw InvalidInputException("Falsche eingabe")
             }
         }
 

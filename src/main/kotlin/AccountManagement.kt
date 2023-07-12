@@ -1,5 +1,3 @@
-import kotlin.random.Random
-
 open class AccountManagement() {
     private val userAccounts = mutableListOf<UserAccount>()
     private val adminAccounts = mutableListOf<AdminAccount>()
@@ -32,12 +30,12 @@ open class AccountManagement() {
         return account
     }
 
-    // Fügt ein Produkt zur Produktliste hinzu
+    // Füge ein Produkt zur Produktliste hinzu
     fun addProduct(product: Product) {
         productsList.add(product)
     }
 
-    // Entfernt ein Produkt aus der Produktliste
+    // Entferne ein Produkt aus der Produktliste
     fun removeProduct(product: Product) {
         productsList.remove(product)
     }
@@ -53,9 +51,9 @@ open class AccountManagement() {
         if (username.isNullOrEmpty() || password.isNullOrEmpty()) {
             throw InvalidInputException("Ungültige Eingabe")
         }
-        val userAccount = userAccounts.find { it.username == username && it.password == password }
-        val adminAccount = adminAccounts.find { it.username == username && it.password == password }
-        return userAccount ?: adminAccount ?: throw UserNotFoundException("Benutzer nicht gefunden")
+        return userAccounts.find { it.username == username && it.password == password }
+            ?: (adminAccounts.find { it.username == username && it.password == password } // Veränderungen wurden von IntelliJ vorgeschlagen
+                ?: throw UserNotFoundException("Benutzer nicht gefunden"))
     }
 }
 
