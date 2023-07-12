@@ -18,7 +18,7 @@ zum Verwalten von Produkten und Benutzerkonten.
 Konzepte und Designentscheidungen im Shop:
 
 [1]- Klassen und Vererbung:
-    Im Shop gibt es verschiedene Klassen, die verschiedene Funktionen.
+    Im Shop gibt es verschiedene Klassen, und verschiedene Funktionen.
     Die Klassen Account, UserAccount und AdminAccount repräsentieren Benutzerkonten mit unterschiedlichen Berechtigungen und Funktionen.
     Die Klasse Product repräsentiert ein Produkt mit Eigenschaften wie Name, Preis, Menge und Kategorien.
     Die Klasse Warenkorb repräsentiert den Warenkorb eines Benutzers mit Funktionen zum Hinzufügen, Entfernen und Berechnen des Gesamtpreises der Produkte.
