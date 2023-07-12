@@ -47,7 +47,7 @@ Konzepte und Designentscheidungen im Shop:
 Klassen beschreibung
 
 [1]- AccountManagement:
-    Diese Klasse ist für das Management der Benutzer - und Administrator - Konten im Shop-System verantwortlich.
+    Diese Klasse ist für das Management der Benutzer - und Administrator - Konten im Shop verantwortlich.
     Sie enthält private Listen (userAccounts, adminAccounts), um die Benutzer - und Administrator - Konten zu speichern.
     Die Klasse bietet Funktionen zum Registrieren von Benutzerkonten, Hinzufügen von Produkten, Entfernen von Produkten und Anzeigen der Produktliste.
     Die Funktionen registerAccount und login ermöglichen die Registrierung und Anmeldung von Benutzerkonten.
@@ -78,7 +78,7 @@ Klassen beschreibung
     Die Klasse bietet Funktionen zum hinzufügen, entfernen und abrufen von Produkten aus dem Warenkorb sowie zur berechnung des gesamtpreises.
 
 [7]- PaymentMethod:
-    Dies ist eine Enumeration, die verschiedene zahlungsmethoden im Shop-System repräsentiert, wie z.B. Kreditkarte und PayPal.
+    Dies ist eine Enumeration, die verschiedene zahlungsmethoden im Shop repräsentiert, wie z.B. Kreditkarte und PayPal.
     Jede Zahlungsmethode hat eine makePayment-Funktion, die die Zahlung durchführt und einen Boolean-Wert zurückgibt, der den Erfolg der Zahlung angibt.
 
 Funktionalitäten
