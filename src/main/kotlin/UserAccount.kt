@@ -1,38 +1,38 @@
 class UserAccount(username: String, password: String) : Account(username, password) {
-    private val shoppingCart = Warenkorb()
+    private val shoppingKorb = Warenkorb()
 
-    fun addToCart(product: Product) {
+    fun addToKorb(product: Product) {
         if (product.quantity.isBlank()) {
             throw InvalidProductException("Produkt kann nicht zum Warenkorb hinzugefügt werden")
         }
-        shoppingCart.addToCart(product)
+        shoppingKorb.addToKorb(product)
+    }
+    // Entfernt ein Produkt aus dem Warenkorb
+    fun removeFromKorb(product: Product) {
+        shoppingKorb.removeFromKorb(product)
     }
 
-    fun addProducts(products: List<Product>) {
-        shoppingCart.addProducts(products)
+    // Gibt eine Liste der Produkte im Warenkorb zurück
+    fun getKorbProductList(): List<Product> {
+        return shoppingKorb.getKorbProductList()
     }
 
-    fun removeFromCart(product: Product) {
-        shoppingCart.removeFromCart(product)
+    // Gibt den Gesamtpreis der Produkte im Warenkorb zurück
+    fun getTotalPriceInKorb(): Double {
+        return shoppingKorb.getTotalPrice()
     }
 
-    fun getCartProductList(): List<Product> {
-        return shoppingCart.getCartProductList()
-    }
-
-    fun getTotalPriceInCart(): Double {
-        return shoppingCart.getTotalPrice()
-    }
-
+    // Führt den Bezahlungsprozess durch, indem die gewählte Zahlungsmethode verwendet wird
+    // Gibt eine InvalidProductException, wenn die Bezahlung fehlschlägt
     fun pay() {
-        val totalPrice = getTotalPriceInCart()
+        val totalPrice = getTotalPriceInKorb()
         if (totalPrice <= 0.0) {
             throw InvalidProductException("Warenkorb ist leer. Sie können nicht Bezahlen")
         }
-        val paymentMethod = choosePaymentMethod()
+        val paymentMethod = paymentMethod()
         if (paymentMethod != null) {
-            val isPaymenSuccessful = paymentMethod.makePayment(totalPrice)
-            if (!isPaymenSuccessful) {
+            val isPaymenErfolgreich = paymentMethod.makePayment(totalPrice)
+            if (!isPaymenErfolgreich) {
                 throw InvalidProductException("Bezahlung fehlgeschlagen")
             }
         } else {
@@ -40,14 +40,13 @@ class UserAccount(username: String, password: String) : Account(username, passwo
         }
     }
 
-    private fun choosePaymentMethod(): PaymentMethod? {
+    // Fragt den Benutzer nach der gewünschten Zahlungsmethode und gibt diese zurück
+    private fun paymentMethod(): PaymentMethod? {
         println("Womit möchten Sie bezahlen")
         println("[1] Kreditkarte")
         println("[2] PayPal")
 
-        val paymentMethodChois = readlnOrNull()?.toIntOrNull()
-
-        return when (paymentMethodChois) {
+        return when (readlnOrNull()?.toIntOrNull()) {
             1 -> PaymentMethod.CREDIT_CARD
             2 -> PaymentMethod.PAYPAL
             else -> null

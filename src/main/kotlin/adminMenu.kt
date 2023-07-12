@@ -15,6 +15,7 @@ fun adminMenu(adminAccount: AdminAccount, accountManagement: AccountManagement) 
         )
 
         when (readlnOrNull()?.toIntOrNull()) {
+            // Zeigt Liste mit Produkten
             1 -> {
                 println("Produkte anzeigen")
                 val productList = accountManagement.getProductList()
@@ -22,7 +23,7 @@ fun adminMenu(adminAccount: AdminAccount, accountManagement: AccountManagement) 
                     println("${product.name}. Preis: ${product.price}. Menge: ${product.quantity}. Kategorie: ${product.category}. Unterkategorie: ${product.subcategory}")
                 }
             }
-
+            // Fügt ein Produkt zur Produktliste
             2 -> {
                 println("Produkt hinzufügen")
                 println("Bitte Name des Produkts eingeben")
@@ -37,7 +38,7 @@ fun adminMenu(adminAccount: AdminAccount, accountManagement: AccountManagement) 
                     println("Falsche eingabe")
                 }
             }
-
+            // Entfernt ein Produkt aus der Produktliste
             3 -> {
                 println("Produkt entfernen")
                 println("Welches Produkt möchten Sie entfernen? Bitte Name eingeben")
@@ -54,7 +55,7 @@ fun adminMenu(adminAccount: AdminAccount, accountManagement: AccountManagement) 
                     println("Falsche eingabe")
                 }
             }
-
+            // Erstellt zufällige Produkte und fügt sie zur Produktliste
             4 -> {
                 println("Zufällige Produkte erstellen")
                 println("Bitte geben Sie die Anzahl der zu erstellenden Produkte ein:")
@@ -66,14 +67,14 @@ fun adminMenu(adminAccount: AdminAccount, accountManagement: AccountManagement) 
                     println("Falsche eingaben")
                 }
             }
-
+            // Wechselt zum Benutzerkonto und ruft userMenu auf
             5 -> {
                 println("Zu Benutzerkonto wechseln")
                 val userAccount = adminAccount.switchToUserAccount(accountManagement)
                 userMenu(userAccount, accountManagement)
                 return
             }
-
+            // Beendet die Schleife und das Menü
             6 -> {
                 println("Auf Wiedersehen")
                 break

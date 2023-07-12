@@ -2,12 +2,16 @@ import kotlin.random.Random
 
 open class AdminAccount(username: String, password: String) : Account(username, password) {
 
+    // Erstellt ein neues UserAccount-Objekt und gibt es zurück
+    // Wenn Konto existiert mit dem Konto anmelden
     fun switchToUserAccount(accountManagement: AccountManagement): UserAccount {
         println("Möchten Sie ein neues Benutzerkonto erstellen oder sich mit einem vorhandenen Konto anmelden?")
-        println("""
+        println(
+            """
             [1] - Neues Benutzerkonto erstellen
             [2] - Mit vorhandenem Konto anmelden
-        """.trimIndent())
+        """.trimIndent()
+        )
 
         when (readLine()?.toIntOrNull()) {
             1 -> {
@@ -53,10 +57,11 @@ open class AdminAccount(username: String, password: String) : Account(username, 
             }
         }
 
-        // Falls ein Fehler auftritt oder die Eingabe ungültig ist, wird standardmäßig ein leeres UserAccount zurückgegeben.
+        // Wenn ein Fehler auftritt, wird standardmäßig ein leeres UserAccount zurückgegeben.
         return UserAccount("", "")
     }
 
+    // Erstellt eine bestimmte Anzahl zufälliger Produkte und fügt sie zur Produktliste in accountManagement hinzu
     fun createRandomProducts(accountManagement: AccountManagement, numProducts: Int) {
         val categories = listOf("Filme", "Bücher")
         val subCategories = mapOf(
