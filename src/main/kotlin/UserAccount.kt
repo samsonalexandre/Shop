@@ -23,7 +23,7 @@ class UserAccount(username: String, password: String) : Account(username, passwo
     }
 
     // Führt den Bezahlungsprozess durch, indem die gewählte Zahlungsmethode verwendet wird
-    // Gibt eine InvalidProductException, wenn die Bezahlung fehlschlägt
+    // gibt eine InvalidProductException, wenn die Bezahlung fehlschlägt
     fun pay() {
         val totalPrice = getTotalPriceInKorb()
         if (totalPrice <= 0.0) {
@@ -31,8 +31,8 @@ class UserAccount(username: String, password: String) : Account(username, passwo
         }
         val paymentMethod = paymentMethod()
         if (paymentMethod != null) {
-            val isPaymenErfolgreich = paymentMethod.makePayment(totalPrice)
-            if (!isPaymenErfolgreich) {
+            val isBezahlenErfolgreich = paymentMethod.makePayment(totalPrice)
+            if (!isBezahlenErfolgreich) {
                 throw InvalidProductException("Bezahlung fehlgeschlagen")
             }
         } else {
