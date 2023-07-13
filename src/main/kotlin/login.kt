@@ -28,7 +28,6 @@ fun login() {
                 } catch (ex: InvalidInputException) {
                     println("Fehler: ${ex.message}")
                 }
-
             }
 
             2 -> {
@@ -50,7 +49,6 @@ fun login() {
                 } catch (ex: UserNotFoundException) {
                     println("Fehler: ${ex.message}")
                 }
-
             }
 
             3 -> {
