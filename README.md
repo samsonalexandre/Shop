@@ -76,7 +76,7 @@ zum Verwalten von Produkten und Benutzerkonten.
 
 [6] - Warenkorb:
    - Diese Klasse repräsentiert den Warenkorb eines Benutzers im Shop.  
-   - Sie enthält eine Liste (products) zur Speicherung der Hinzugefügten Produkte.  
+   - Sie enthält eine Liste (products) zur Speicherung der hinzugefügten Produkte.  
    - Die Klasse bietet Funktionen zum Hinzufügen, entfernen und Abrufen von Produkten aus dem Warenkorb sowie zur Berechnung des Gesamtpreises.  
 
 [7] - PaymentMethod:
@@ -126,7 +126,7 @@ zum Verwalten von Produkten und Benutzerkonten.
 
 [4] - Warenkorb:
    - Wählen Sie die Option "Produkt zum Warenkorb Hinzufügen", um ein Produkt in den Warenkorb zu legen.  
-   - Wählen Sie die Option "Produkt aus dem Warenkorb Entfernen", um ein Produkt aus dem Warenkorb zu Entfernen.  
+   - Wählen Sie die Option "Produkt aus dem Warenkorb Entfernen", um ein Produkt aus dem Warenkorb zu entfernen.  
    - Wählen Sie die Option "Gesamtpreis im Warenkorb anzeigen", um den Gesamtpreis der Produkte im Warenkorb zu sehen.  
 
 
@@ -138,8 +138,8 @@ zum Verwalten von Produkten und Benutzerkonten.
 [6] - Administrator-Funktionalität:
    - Administratoren haben Zugriff auf erweiterte Optionen im Shop.  
    - Wählen Sie die Option "Zu Benutzerkonto wechseln", um zum Benutzerkonto zu wechseln.  
-   - Wählen Sie die Option "Produkt Hinzufügen", um neue Produkte zum Shop Hinzuzufügen.  
-   - Wählen Sie die Option "Produkt Entfernen", um vorhandene Produkte aus dem Shop zu Entfernen.  
+   - Wählen Sie die Option "Produkt Hinzufügen", um neue Produkte zum Shop hinzuzufügen.  
+   - Wählen Sie die Option "Produkt Entfernen", um vorhandene Produkte aus dem Shop zu entfernen.  
    - Wählen Sie die Option "Zufällige Produkte erstellen", um automatisch zufällige Produkte zu erstellen.  
 ## Hinweise
 - Stellen Sie sicher, dass Sie gültige Eingaben machen und alle Anweisungen befolgen.  
