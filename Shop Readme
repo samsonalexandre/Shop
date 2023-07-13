@@ -93,7 +93,7 @@ Funktionalitäten
 
 [2]- Anmeldung:
     Benutzer können sich mit ihren Benutzernamen und Passwörtern anmelden.
-    Das System überprüft die eingegebenen daten und gewährt den zugriff auf das entsprechende Benutzerkonto.
+    Das System überprüft die eingegebenen daten und gewährt den Zugriff auf das entsprechende Benutzerkonto.
 
 [3]- Produktsuche:
     Benutzer und Administratoren können die verfügbaren Produkte im Shop anzeigen.
@@ -124,11 +124,11 @@ Verwendung des Shop-Systems
 [2]- Anmeldung:
     Wählen Sie die Option "Einloggen".
     Geben Sie Ihren Benutzernamen und Ihr Passwort ein.
-    Das System überprüft Ihre Daten und gewährt den zugriff auf ihr Konto.
+    Das System überprüft Ihre Daten und gewährt den Zugriff auf ihr Konto.
 
 [3]- Produktsuche:
     Wählen Sie die Option "Produkte anzeigen".
-    Die verfügbaren Produkte werden mit ihren details angezeigt.
+    Die verfügbaren Produkte werden mit ihren Details angezeigt.
 
 [4]- Warenkorb:
     Wählen Sie die Option "Produkt zum Warenkorb Hinzufügen", um ein Produkt in den Warenkorb zu legen.
