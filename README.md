@@ -7,6 +7,7 @@ Für Hilfe bei der Erstellung dieses Projekts danke ich:
 Gordon Lucas  
 Viktor Schäfer  
 Sergei Shkredov  
+Xenia Skornjakow  
 https://developer.alexanderklimov.ru/android/index.php  
 https://ru.stackoverflow.com  
 https://kotlinlang.ru  

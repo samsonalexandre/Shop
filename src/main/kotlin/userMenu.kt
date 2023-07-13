@@ -72,6 +72,13 @@ fun userMenu(userAccount: UserAccount, accountManagement: AccountManagement) {
                 break
             }
 
+            7 -> {
+                var korbList = userAccount.getKorbProductList()
+                for (korb in korbList) {
+                    println("${korb.name}. Preis: ${korb.price}")
+                }
+            }
+
             else -> {
                 throw InvalidInputException("Falsche eingabe")
             }
