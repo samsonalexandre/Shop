@@ -1,5 +1,5 @@
 ReadMe wurde auf Russisch geschrieben, und dan mit einem Übersetzer übersetzt, und angepasst.
-Dieser Shop wurde von Alexandre Samson erstellt.
+Der Shop wurde von Alexandre Samson erstellt.
 Juchen 06.07.2023 bis 12.07.2023
 
 Für Hilfe bei der Erstellung dieses Projekts danke ich:
@@ -12,7 +12,7 @@ Für Hilfe bei der Erstellung dieses Projekts danke ich:
     https://www.youtube.com/watch?v=30tchn0TjaM&t=2097s
     https://www.youtube.com/watch?v=UMvhLSCYz2E
 
-Dieses Shop ist eine einfache Implementierung eines Online-Shops. Es ermöglicht Benutzern die Registrierung, Anmeldung,
+Der Shop ist eine einfache Implementierung eines Online-Shops. Es ermöglicht Benutzern die Registrierung, Anmeldung,
 Produktsuche, Hinzufügen von Produkten zum Warenkorb und Bezahlung der Produkte. Es bietet auch eine Administrator-Funktionalität
 zum Verwalten von Produkten und Benutzerkonten.
 
@@ -48,7 +48,7 @@ Konzepte und Designentscheidungen im Shop:
     und die Code-Wartbarkeit und -Lesbarkeit zu verbessern. Natürlich kann der Code entsprechend den spezifischen Anforderungen
     und Präferenzen weiter angepasst und erweitert werden.
 
-Klassen beschreibung
+Klassenbeschreibung
 
 [1]- AccountManagement:
     Diese Klasse ist für das Management der Benutzer - und Administrator - Konten im Shop verantwortlich.
@@ -64,7 +64,7 @@ Klassen beschreibung
 [3]- UserAccount:
     Diese Klasse repräsentiert ein Benutzerkonto im Shop.
     Sie erbt von der Klasse Account und enthält zusätzliche Funktionen und Eigenschaften, die für Benutzerkonten relevant sind.
-    Die Klasse ermöglicht das hinzufügen und entfernen von Produkten zum Warenkorb, das abrufen des Warenkorbs und die bezahlung der Produkte.
+    Die Klasse ermöglicht das hinzufügen und entfernen von Produkten zum Warenkorb, das abrufen des Warenkorbs und die Bezahlung der Produkte.
 
 [4]- AdminAccount:
     Diese Klasse repräsentiert ein Administrator-Konto im Shop.
