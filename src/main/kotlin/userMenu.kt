@@ -6,10 +6,11 @@ fun userMenu(userAccount: UserAccount, accountManagement: AccountManagement) {
             """
             [1] - Produkte anzeigen
             [2] - Produkt zum Warenkorb hinzufügen
-            [3] - Produkt aus dem Warenkorb entfernen
-            [4] - Gesamtpreis im Warenkorb anzeigen
-            [5] - Bezahlung
-            [6] - Ausloggen
+            [3] - Produkte im Warenkorb anzeigen
+            [4] - Produkt aus dem Warenkorb entfernen
+            [5] - Gesamtpreis im Warenkorb anzeigen
+            [6] - Bezahlung
+            [7] - Ausloggen
         """.trimIndent()
         )
 
@@ -44,8 +45,16 @@ fun userMenu(userAccount: UserAccount, accountManagement: AccountManagement) {
                     println("Falsche eingabe")
                 }
             }
-            // Entfernt ein Produkt aus dem Warenkorb
+            // Zeigt Produkte im Warenkorb
             3 -> {
+                println("Produkte im Warenkorb anzeigen")
+                val korbList = userAccount.getKorbProductList()
+                for (korb in korbList) {
+                    println("${korb.name}. Preis: ${korb.price}")
+                }
+            }
+            // Entfernt ein Produkt aus dem Warenkorb
+            4 -> {
                 println("Produkt aus dem Warenkorb entfernen")
                 val cardProdukts = userAccount.getKorbProductList()
                 println("Bitte wählen Sie ein Produkt zum entfernen")
@@ -57,26 +66,19 @@ fun userMenu(userAccount: UserAccount, accountManagement: AccountManagement) {
                 }
             }
             // Zeigt den Gesamtpreis der Produkte im Warenkorb an
-            4 -> {
+            5 -> {
                 println("Gesamtpreis im Warenkorb anzeigen")
                 println("Gesamtpreis: ${userAccount.getTotalPriceInKorb()}")
             }
             // Führt den Bezahlungsprozess durch
-            5 -> {
+            6 -> {
                 println("Bezahlung")
                 userAccount.pay()
             }
             // Beendet die Schleife und das Menü
-            6 -> {
+            7 -> {
                 println("Auf Wiedersehen")
                 break
-            }
-
-            7 -> {
-                var korbList = userAccount.getKorbProductList()
-                for (korb in korbList) {
-                    println("${korb.name}. Preis: ${korb.price}")
-                }
             }
 
             else -> {
