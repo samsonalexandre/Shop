@@ -64,22 +64,22 @@ Klassenbeschreibung
 [3]- UserAccount:
     Diese Klasse repräsentiert ein Benutzerkonto im Shop.
     Sie erbt von der Klasse Account und enthält zusätzliche Funktionen und Eigenschaften, die für Benutzerkonten relevant sind.
-    Die Klasse ermöglicht das hinzufügen und entfernen von Produkten zum Warenkorb, das abrufen des Warenkorbs und die Bezahlung der Produkte.
+    Die Klasse ermöglicht das Hinzufügen und entfernen von Produkten zum Warenkorb, das Abrufen des Warenkorbs und die Bezahlung der Produkte.
 
 [4]- AdminAccount:
     Diese Klasse repräsentiert ein Administrator-Konto im Shop.
     Sie erbt von der Klasse Account und enthält zusätzliche Funktionen und Eigenschaften, die für Administrator-Konten relevant sind.
-    Die Klasse ermöglicht das hinzufügen und entfernen von Produkten zur Produktliste und das erstellen zufälliger Produkte.
+    Die Klasse ermöglicht das Hinzufügen und entfernen von Produkten zur Produktliste und das Erstellen zufälliger Produkte.
 
 [5]- Product:
     Diese Klasse repräsentiert ein Produkt im Shop.
     Sie enthält Eigenschaften wie Name, Preis, Menge, Kategorie und Unterkategorie.
-    Die Klasse ermöglicht das abrufen und ändern der Produktinformationen.
+    Die Klasse ermöglicht das Abrufen und ändern der Produktinformationen.
 
 [6]- Warenkorb:
     Diese Klasse repräsentiert den Warenkorb eines Benutzers im Shop.
-    Sie enthält eine Liste (products) zur Speicherung der hinzugefügten Produkte.
-    Die Klasse bietet Funktionen zum hinzufügen, entfernen und abrufen von Produkten aus dem Warenkorb sowie zur berechnung des gesamtpreises.
+    Sie enthält eine Liste (products) zur Speicherung der Hinzugefügten Produkte.
+    Die Klasse bietet Funktionen zum Hinzufügen, entfernen und Abrufen von Produkten aus dem Warenkorb sowie zur Berechnung des Gesamtpreises.
 
 [7]- PaymentMethod:
     Dies ist eine Enumeration, die verschiedene zahlungsmethoden im Shop repräsentiert, wie z.B. Kreditkarte und PayPal.
@@ -100,7 +100,7 @@ Funktionalitäten
     Die Produkte werden mit Namen, Preis, Menge, Kategorie und Unterkategorie angezeigt.
 
 [4]- Warenkorb:
-    Benutzer können Produkte zum Warenkorb hinzufügen und daraus entfernen.
+    Benutzer können Produkte zum Warenkorb Hinzufügen und daraus Entfernen.
     Der Warenkorb speichert die ausgewählten Produkte eines Benutzers.
     Benutzer können den gesamtpreis der Produkte im Warenkorb anzeigen.
 
@@ -111,7 +111,7 @@ Funktionalitäten
 
 [6]- Administrator-Funktionalität:
     Administratoren haben erweiterte berechtigungen im System.
-    Sie können Produkte hinzufügen und entfernen.
+    Sie können Produkte Hinzufügen und Entfernen.
     Administratoren können auch zwischen dem Administrator- und Benutzerkonto wechseln.
 
 Verwendung des Shop-Systems
@@ -131,8 +131,8 @@ Verwendung des Shop-Systems
     Die verfügbaren Produkte werden mit ihren details angezeigt.
 
 [4]- Warenkorb:
-    Wählen Sie die Option "Produkt zum Warenkorb hinzufügen", um ein Produkt in den Warenkorb zu legen.
-    Wählen Sie die Option "Produkt aus dem Warenkorb entfernen", um ein Produkt aus dem Warenkorb zu entfernen.
+    Wählen Sie die Option "Produkt zum Warenkorb Hinzufügen", um ein Produkt in den Warenkorb zu legen.
+    Wählen Sie die Option "Produkt aus dem Warenkorb Entfernen", um ein Produkt aus dem Warenkorb zu Entfernen.
     Wählen Sie die Option "Gesamtpreis im Warenkorb anzeigen", um den Gesamtpreis der Produkte im Warenkorb zu sehen.
 
 
@@ -144,8 +144,8 @@ Verwendung des Shop-Systems
 [6]- Administrator-Funktionalität:
     Administratoren haben Zugriff auf erweiterte Optionen im Shop.
     Wählen Sie die Option "Zu Benutzerkonto wechseln", um zum Benutzerkonto zu wechseln.
-    Wählen Sie die Option "Produkt hinzufügen", um neue Produkte zum Shop hinzuzufügen.
-    Wählen Sie die Option "Produkt entfernen", um vorhandene Produkte aus dem Shop zu entfernen.
+    Wählen Sie die Option "Produkt Hinzufügen", um neue Produkte zum Shop Hinzuzufügen.
+    Wählen Sie die Option "Produkt Entfernen", um vorhandene Produkte aus dem Shop zu Entfernen.
     Wählen Sie die Option "Zufällige Produkte erstellen", um automatisch zufällige Produkte zu erstellen.
 
 Hinweise
