@@ -21,7 +21,7 @@ fun login() {
                 val password = readlnOrNull()
                 println("Möchten Sie einen Admin-Account erstellen? (Ja/Nein):")
                 val isAdminInput = readlnOrNull()
-                val isAdmin = (isAdminInput == "Ja")
+                val isAdmin = isAdminInput?.equals("Ja", ignoreCase = true) == true // diese Zeile habe ich beim ChatGPT abgeguckt
                 try {
                     accountManagement.registerAccount(username, password, isAdmin)
                     println("Registrierung erfolgreich")
