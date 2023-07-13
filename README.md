@@ -1,6 +1,6 @@
 ReadMe wurde auf Russisch geschrieben, und dan mit einem Übersetzer übersetzt, und angepasst.  
 Der Shop wurde von Alexandre Samson erstellt.  
-Juchen 06.07.2023 bis 12.07.2023
+Jüchen 06.07.2023 bis 12.07.2023
 
 ## Danke
 Für Hilfe bei der Erstellung dieses Projekts danke ich:  
