@@ -5,8 +5,8 @@ open class AdminAccount(username: String, password: String) : Account(username, 
     // Erstellt ein neues UserAccount-Objekt und gibt es zurück
     // Wenn Konto existiert mit dem Konto anmelden
     /*
-    Hier, habe ich hilfe bekommen vom Sergei Shkredov. Der hat mir empfohlen fun switchToUserAccount zu schreiben,
-    und in AccountManagement eine produktList zu erstellen für beide, um probleme mit verlorener
+    Hier, habe ich hilfe bekommen vom Sergei Shkredov. Der hat mir empfohlen 'fun switchToUserAccount' zu schreiben,
+    und in 'AccountManagement' eine produktList zu erstellen für beide Accounts, um probleme mit verlorener liste beim Account wechsel zu vermeiden
     https://habr.com/ru/companies/jugru/articles/274091/
     https://habr.com/ru/companies/jugru/articles/314524/
      */
