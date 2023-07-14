@@ -1,7 +1,7 @@
 open class AccountManagement {
     private val userAccounts = mutableListOf<UserAccount>()
     private val adminAccounts = mutableListOf<AdminAccount>()
-    private val productsList = mutableListOf<Product>()
+    private val productsList = Product.getPredefinedProducts().toMutableList()//mutableListOf<Product>()
 
     // Registriert einen neuen Benutzer oder Admin-Account
     // gibt den erstellten Account zurück
