@@ -19,12 +19,8 @@ fun userMenu(userAccount: UserAccount, accountManagement: AccountManagement) {
             1 -> {
                 println("Produkte anzeigen")
                 val productList = accountManagement.getProductList()
-                if (productList != null) {
-                    for (product in productList) {
-                        println("${product.name}. Preis: ${product.price}. Menge: ${product.quantity}. Kategorie: ${product.category}. Unterkategorie: ${product.subcategory}")
-                    }
-                } else {
-                    println("Es sind keine produkte verfügbar")
+                for (product in productList) {
+                    println("${product.name}. Preis: ${product.price}. Menge: ${product.quantity}. Kategorie: ${product.category}. Unterkategorie: ${product.subcategory}")
                 }
 
             }
