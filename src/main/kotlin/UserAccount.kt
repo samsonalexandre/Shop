@@ -43,8 +43,11 @@ class UserAccount(username: String, password: String) : Account(username, passwo
     // Fragt den Benutzer nach der gewünschten Zahlungsmethode und gibt diese zurück
     private fun paymentMethod(): PaymentMethod? {
         println("Womit möchten Sie bezahlen")
-        println("[1] Kreditkarte")
-        println("[2] PayPal")
+        println(
+            """
+            [1] Kreditkarte
+            [2] PayPal
+        """.trimIndent())
 
         return when (readlnOrNull()?.toIntOrNull()) {
             1 -> PaymentMethod.CREDIT_CARD
