@@ -1,10 +1,10 @@
-open class AccountManagement() {
+open class AccountManagement {
     private val userAccounts = mutableListOf<UserAccount>()
     private val adminAccounts = mutableListOf<AdminAccount>()
     private val productsList = mutableListOf<Product>()
 
     // Registriert einen neuen Benutzer oder Admin-Account
-    // Gibt den erstellten Account zurück
+    // gibt den erstellten Account zurück
     fun registerAccount(username: String?, password: String?, isAdmin: Boolean = false): Account {
         if (username.isNullOrEmpty() || password.isNullOrEmpty()) {
             throw InvalidInputException("Ungültige Benutzerdaten")
@@ -46,7 +46,7 @@ open class AccountManagement() {
     }
 
     // Überprüft die Benutzerdaten und gibt den entsprechenden Account zurück
-    // Gibt eine InvalidInputException oder UserNotFoundException, wenn die Benutzerdaten falsch sind
+    // gibt eine InvalidInputException oder UserNotFoundException, wenn die Benutzerdaten falsch sind
     fun login(username: String?, password: String?): Account {
         if (username.isNullOrEmpty() || password.isNullOrEmpty()) {
             throw InvalidInputException("Ungültige Eingabe")

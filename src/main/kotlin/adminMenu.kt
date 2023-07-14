@@ -34,11 +34,11 @@ fun adminMenu(adminAccount: AdminAccount, accountManagement: AccountManagement) 
                 println("Bitte Name des Produkts eingeben")
                 val name = readlnOrNull()
                 println("Bitte Preis des Produkts eingeben")
-                val price = readLine()?.toDoubleOrNull()
+                val price = readlnOrNull()?.toDoubleOrNull()
                 if (name != null && price != null) {
                     val newProduct = Product(name, price, "", "", "")
                     accountManagement.addProduct(newProduct)
-                    println("Sie haben $newProduct hinzugefügt")
+                    println("Sie haben ${newProduct.name}. Preis: ${newProduct.price} hinzugefügt")
                 } else {
                     println("Falsche eingabe")
                 }

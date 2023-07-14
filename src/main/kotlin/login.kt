@@ -8,7 +8,7 @@ fun login() {
             """ 
             [1] - Registrieren
             [2] - Einloggen
-            [3] - Beenden
+            [3] - Beenden login
         """.trimIndent()
         ) // Habe beim Viktor abgeguckt
 
