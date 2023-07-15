@@ -21,7 +21,7 @@ fun adminMenu(adminAccount: AdminAccount, accountManagement: AccountManagement) 
                 val productList = accountManagement.getProductList()
                 if (productList.isNotEmpty()) {
                     for (product in productList) {
-                        println("${product.name}. Preis: ${product.price}. Menge: ${product.quantity}. Kategorie: ${product.category}. Unterkategorie: ${product.subcategory}")
+                        println("${product.name}. Preis: ${product.price}. Autor: ${product.autor} Menge: ${product.quantity}. Kategorie: ${product.category}. Unterkategorie: ${product.subcategory}")
                     }
                 } else {
                     println("Es sind keine produkte verfügbar")
@@ -34,9 +34,17 @@ fun adminMenu(adminAccount: AdminAccount, accountManagement: AccountManagement) 
                 println("Bitte Name des Produkts eingeben")
                 val name = readlnOrNull()
                 println("Bitte Preis des Produkts eingeben")
-                val price = readLine()?.toDoubleOrNull()
-                if (name != null && price != null) {
-                    val newProduct = Product(name, price, "", "", "")
+                val price = readlnOrNull()?.toDoubleOrNull()
+                println("Bitte Autor des Buches eingeben")
+                val autor = readlnOrNull()
+                println("Bitte Menge eingeben")
+                val quantity = readlnOrNull()
+                println("Bitte Kategorie eingeben")
+                val category = readlnOrNull()
+                println("Bitte Unterkategorie eingeben")
+                val subcategory = readlnOrNull()
+                if (name != null && price != null && autor != null && quantity != null && category != null && subcategory != null) {
+                    val newProduct = Product(name, price, autor, quantity, category, subcategory)
                     accountManagement.addProduct(newProduct)
                     println("Sie haben $newProduct hinzugefügt")
                 } else {

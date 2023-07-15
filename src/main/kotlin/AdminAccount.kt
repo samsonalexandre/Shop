@@ -90,7 +90,7 @@ open class AdminAccount(username: String, password: String) : Account(username, 
             val formattedPrice = priceString.replace(",", ".")
             val roundPrice = formattedPrice.toDouble()
             val bewertung = "Bewertung: ${Random.nextInt(1, 6)}"
-            val product = Product(name, roundPrice.toDouble(), bewertung, category, subCategory)
+            val product = Product(name, roundPrice.toDouble(), autor = "", bewertung, category, subCategory)
             accountManagement.addProduct(product)
         }
     }
