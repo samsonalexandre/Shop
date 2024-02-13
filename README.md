@@ -1,13 +1,11 @@
-ReadMe wurde auf Russisch geschrieben, und dan mit einem Übersetzer übersetzt, und angepasst.  
-Text wurde von Xenia Skornjakow geprüft, und grammatisch verbessert.  
+
 Der Shop wurde von Alexandre Samson erstellt.  
 Jüchen 06.07.2023 bis 12.07.2023
 
 ## Danke
 Für Hilfe bei der Erstellung dieses Projekts danke ich:  
 Gordon Lucas  
-Viktor Schäfer  
-Sergei Shkredov  
+Viktor Schäfer   
 Xenia Skornjakow  
 https://developer.alexanderklimov.ru/android/index.php  
 https://ru.stackoverflow.com  
